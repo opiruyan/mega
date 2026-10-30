@@ -43,8 +43,8 @@ reports sent through the booking form of a booking-v3 tenant. Fixing the parser 
 **`one-day move`: the date moves by one day, not by a swap.** The month stays and the day shifts by
 one, and it depends on where the reader is ("Client in Lisbon got Tuesday. Client in Toronto got
 Monday."). This looks like a time-zone conversion, not the parser. The desk had already marked
-these reports as one-day moves (`desk-notes.json`), but the cause table on #4471 still counts them
-under `parser`, because it files a report by its tenant.
+these reports as one-day moves (`desk-notes.json`). The desk files a report by its tenant, so they
+stay counted under `parser` too, footnoted under the table.
 
 ## Why one ticket hid three
 
