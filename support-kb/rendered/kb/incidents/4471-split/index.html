@@ -50,7 +50,7 @@
     <h1>#4471 split · three problems, not one</h1>
     <p class="meta">
       <span>owner <b>support desk</b></span>
-      <span class="status open">open</span>
+      <span class="status closed">closed</span>
       <span>reviewed 2026-10-30 · 0 days ago</span>
     </p>
   </header>
@@ -58,8 +58,9 @@
 <p><a href="/kb/incidents/4471">#4471</a> says one issue with one fix queued. Read by cause rather than by subject
 line, its reports hold three problems. Each one now has its own ticket.</p>
 
-<aside class="warn">
-<p>The queued parser fix closes only the first problem. The other two keep coming in after it ships.</p>
+<aside class="note">
+<p>Closed 5 October. Engineering fixed the parser and retired the booking-v3 form. Nothing has fixed the
+one-day move: if those reports keep coming, reopen its ticket.</p>
 </aside>
 
 <h2>What #4471 holds</h2>
@@ -121,6 +122,14 @@ Monday.”). This looks like a time-zone conversion, not the parser. The desk ha
 these reports as one-day moves (<code>desk-notes.json</code>). The desk files a report by its tenant, so they
 stay counted under <code>parser</code> too, footnoted under the table.</p>
 
+<h2>Outcome</h2>
+
+<ul>
+<li><code>parser</code>: fixed, <code>fix(dates): parse dd/mm for eu locales</code>. Ticket closed as completed.</li>
+<li><code>hint</code>: won’t fix, because the booking-v3 form is retired. Ticket closed as not planned.</li>
+<li><code>one-day move</code>: closed with #4471 as not planned. Neither change touches it.</li>
+</ul>
+
 <h2>Why one ticket hid three</h2>
 
 <ul>
@@ -135,8 +144,8 @@ stay counted under <code>parser</code> too, footnoted under the table.</p>
 <h2>For the desk</h2>
 
 <ul>
-<li>Keep #4471 for the parser, and send new booking-v3 form reports to the hint ticket.</li>
-<li>Send reports of a date off by one day to the one-day-move ticket, whatever their subject says.</li>
+<li>A day/month swap reported after 5 October is a regression of the parser fix: open a new ticket.</li>
+<li>Send reports of a date off by one day to the one-day-move ticket and reopen it, whatever their subject says.</li>
 </ul>
 
 <p class="stamp">desk ref <b>DR-HTP7-70YZ</b></p>
